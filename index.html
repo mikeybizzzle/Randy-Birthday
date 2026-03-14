@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Randy aka El Jefe</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Fredoka+One&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --flame: #FF6B35;
+    --gold: #FFD700;
+    --hot-pink: #FF1493;
+    --electric-blue: #00D4FF;
+    --dark: #1a1a2e;
+    --darker: #0f0f1a;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(–darker);
+color: #fff;
+font-family: ‘Fredoka One’, cursive;
+overflow-x: hidden;
+cursor: url(‘data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="font-size:28px"><text y="28">🔥</text></svg>’), auto;
+}
+
+/* CONFETTI RAIN */
+.confetti-container {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+pointer-events: none;
+z-index: 999;
+overflow: hidden;
+}
+.confetti {
+position: absolute;
+top: -20px;
+font-size: 24px;
+animation: confettiFall linear infinite;
+opacity: 0.9;
+}
+@keyframes confettiFall {
+0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+100% { transform: translateY(105vh) rotate(720deg); opacity: 0.3; }
+}
+
+/* HERO */
+.hero {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 2rem;
+position: relative;
+background: radial-gradient(ellipse at 50% 0%, rgba(255,107,53,0.15) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 80%, rgba(255,20,147,0.1) 0%, transparent 50%),
+var(–darker);
+}
+
+.age-badge {
+font-family: ‘Press Start 2P’, monospace;
+font-size: clamp(0.6rem, 1.2vw, 0.9rem);
+color: var(–electric-blue);
+letter-spacing: 4px;
+text-transform: uppercase;
+margin-bottom: 1rem;
+animation: glitch 3s infinite;
+}
+
+.hero h1 {
+font-family: ‘Bangers’, cursive;
+font-size: clamp(3.5rem, 12vw, 9rem);
+line-height: 0.9;
+letter-spacing: 4px;
+background: linear-gradient(135deg, var(–gold), var(–flame), var(–hot-pink));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+filter: drop-shadow(0 0 40px rgba(255,107,53,0.4));
+animation: heroIn 1s ease-out both;
+margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+font-family: ‘Permanent Marker’, cursive;
+font-size: clamp(1.5rem, 4vw, 3rem);
+color: var(–gold);
+text-shadow: 0 0 20px rgba(255,215,0,0.5);
+animation: heroIn 1s ease-out 0.3s both;
+}
+
+.subtitle {
+font-size: clamp(1rem, 2.5vw, 1.5rem);
+color: rgba(255,255,255,0.7);
+margin-top: 1rem;
+animation: heroIn 1s ease-out 0.6s both;
+}
+
+.subtitle span {
+color: var(–flame);
+}
+
+@keyframes heroIn {
+from { opacity: 0; transform: translateY(40px) scale(0.9); }
+to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes glitch {
+0%, 90%, 100% { opacity: 1; transform: translate(0); }
+92% { transform: translate(-2px, 1px); color: var(–hot-pink); }
+94% { transform: translate(2px, -1px); color: var(–gold); }
+96% { transform: translate(-1px, -1px); color: var(–electric-blue); }
+}
+
+/* SCROLLING TICKER */
+.ticker-wrap {
+overflow: hidden;
+background: linear-gradient(90deg, var(–flame), var(–hot-pink), var(–gold), var(–flame));
+padding: 0.8rem 0;
+white-space: nowrap;
+}
+.ticker {
+display: inline-block;
+animation: ticker 20s linear infinite;
+font-family: ‘Bangers’, cursive;
+font-size: 1.4rem;
+letter-spacing: 2px;
+color: var(–dark);
+}
+@keyframes ticker {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+
+/* ROAST SECTION */
+.section {
+padding: 4rem 2rem;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.section-title {
+font-family: ‘Bangers’, cursive;
+font-size: clamp(2rem, 5vw, 3.5rem);
+text-align: center;
+margin-bottom: 2rem;
+color: var(–gold);
+text-shadow: 3px 3px 0 var(–flame);
+}
+
+/* STATS GRID */
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1.5rem;
+margin-bottom: 3rem;
+}
+
+.stat-card {
+background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+border: 1px solid rgba(255,215,0,0.2);
+border-radius: 16px;
+padding: 2rem 1.5rem;
+text-align: center;
+transition: all 0.3s ease;
+animation: cardIn 0.6s ease-out both;
+}
+.stat-card:hover {
+transform: translateY(-6px) rotate(-1deg);
+border-color: var(–gold);
+box-shadow: 0 12px 40px rgba(255,215,0,0.15);
+}
+
+.stat-emoji {
+font-size: 3rem;
+display: block;
+margin-bottom: 0.5rem;
+}
+.stat-number {
+font-family: ‘Bangers’, cursive;
+font-size: 2.5rem;
+color: var(–flame);
+line-height: 1;
+}
+.stat-label {
+font-size: 0.95rem;
+color: rgba(255,255,255,0.6);
+margin-top: 0.3rem;
+}
+
+@keyframes cardIn {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* ROAST CARDS */
+.roast-list {
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
+
+.roast-card {
+background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(255,20,147,0.05));
+border-left: 4px solid var(–flame);
+border-radius: 0 16px 16px 0;
+padding: 1.5rem 2rem;
+font-size: clamp(1rem, 2vw, 1.2rem);
+color: rgba(255,255,255,0.85);
+line-height: 1.6;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+.roast-card::before {
+content: ‘🔥’;
+position: absolute;
+right: 1rem;
+top: 50%;
+transform: translateY(-50%);
+font-size: 2rem;
+opacity: 0.15;
+}
+.roast-card:hover {
+transform: translateX(8px);
+background: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(255,20,147,0.1));
+border-left-color: var(–hot-pink);
+}
+.roast-card strong {
+color: var(–gold);
+}
+
+/* FANTASY FOOTBALL MEMORIAL */
+.memorial {
+background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+border: 2px solid rgba(255,255,255,0.1);
+border-radius: 20px;
+padding: 3rem 2rem;
+text-align: center;
+margin: 3rem 0;
+position: relative;
+}
+.memorial::before {
+content: ‘⚰️’;
+font-size: 4rem;
+display: block;
+margin-bottom: 1rem;
+}
+.memorial h3 {
+font-family: ‘Permanent Marker’, cursive;
+font-size: 1.8rem;
+color: rgba(255,255,255,0.5);
+margin-bottom: 0.5rem;
+}
+.memorial p {
+color: rgba(255,255,255,0.4);
+font-style: italic;
+font-size: 1.1rem;
+line-height: 1.6;
+}
+.memorial .dates {
+margin-top: 1rem;
+font-family: ‘Press Start 2P’, monospace;
+font-size: 0.6rem;
+color: rgba(255,255,255,0.25);
+letter-spacing: 2px;
+}
+
+/* HIBACHI SECTION */
+.hibachi-banner {
+background: linear-gradient(135deg, var(–flame), #FF8C42, var(–gold));
+padding: 3rem 2rem;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.hibachi-banner h2 {
+font-family: ‘Bangers’, cursive;
+font-size: clamp(2rem, 6vw, 4rem);
+color: var(–dark);
+position: relative;
+z-index: 1;
+}
+.hibachi-banner p {
+font-size: 1.3rem;
+color: rgba(0,0,0,0.6);
+margin-top: 0.5rem;
+position: relative;
+z-index: 1;
+}
+.fire-bg {
+position: absolute;
+bottom: 0; left: 0;
+width: 100%;
+font-size: 4rem;
+line-height: 1;
+opacity: 0.2;
+white-space: nowrap;
+overflow: hidden;
+}
+
+/* QUOTE WALL */
+.quote-wall {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1rem;
+}
+.quote-card {
+background: rgba(255,255,255,0.03);
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 12px;
+padding: 1.5rem;
+font-style: italic;
+color: rgba(255,255,255,0.6);
+font-size: 1rem;
+line-height: 1.5;
+transition: all 0.3s;
+}
+.quote-card:hover {
+border-color: var(–gold);
+color: rgba(255,255,255,0.9);
+}
+.quote-card .attribution {
+display: block;
+margin-top: 0.8rem;
+font-style: normal;
+font-size: 0.8rem;
+color: var(–flame);
+font-family: ‘Press Start 2P’, monospace;
+font-size: 0.55rem;
+}
+
+/* FINAL CTA */
+.finale {
+text-align: center;
+padding: 6rem 2rem;
+background: radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.08), transparent 60%);
+}
+.finale h2 {
+font-family: ‘Bangers’, cursive;
+font-size: clamp(2.5rem, 8vw, 6rem);
+background: linear-gradient(135deg, var(–gold), var(–flame));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+margin-bottom: 1rem;
+}
+.finale p {
+font-size: 1.3rem;
+color: rgba(255,255,255,0.6);
+max-width: 600px;
+margin: 0 auto 2rem;
+line-height: 1.6;
+}
+.finale .big-emoji {
+font-size: 6rem;
+display: block;
+margin-bottom: 2rem;
+animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-20px); }
+}
+
+.birthday-btn {
+display: inline-block;
+padding: 1rem 3rem;
+background: linear-gradient(135deg, var(–flame), var(–hot-pink));
+color: #fff;
+font-family: ‘Bangers’, cursive;
+font-size: 1.5rem;
+letter-spacing: 2px;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+transition: all 0.3s;
+text-decoration: none;
+box-shadow: 0 4px 30px rgba(255,107,53,0.4);
+}
+.birthday-btn:hover {
+transform: scale(1.08);
+box-shadow: 0 8px 50px rgba(255,107,53,0.6);
+}
+
+/* FOOTER */
+footer {
+text-align: center;
+padding: 2rem;
+color: rgba(255,255,255,0.2);
+font-size: 0.8rem;
+}
+footer span { color: var(–flame); }
+
+/* AGE COUNTER */
+.age-counter {
+margin: 2rem auto;
+display: flex;
+justify-content: center;
+gap: 1rem;
+flex-wrap: wrap;
+}
+.age-digit {
+background: linear-gradient(180deg, rgba(255,107,53,0.2), rgba(255,107,53,0.05));
+border: 2px solid var(–flame);
+border-radius: 12px;
+width: 100px;
+height: 120px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: ‘Bangers’, cursive;
+font-size: 5rem;
+color: var(–gold);
+text-shadow: 0 0 30px rgba(255,215,0,0.5);
+animation: digitPop 0.5s ease-out both;
+}
+.age-digit:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes digitPop {
+from { opacity: 0; transform: scale(0.3) rotateY(90deg); }
+to { opacity: 1; transform: scale(1) rotateY(0deg); }
+}
+
+/* SPANISH SECTION */
+.spanish-bar {
+background: linear-gradient(90deg, #006847, #fff, #CE1126);
+padding: 0.3rem;
+}
+.spanish-section {
+background: rgba(0,104,71,0.1);
+border: 1px solid rgba(0,104,71,0.3);
+border-radius: 16px;
+padding: 2rem;
+text-align: center;
+margin: 2rem 0;
+}
+.spanish-section h3 {
+font-family: ‘Permanent Marker’, cursive;
+font-size: 2rem;
+color: #CE1126;
+}
+.spanish-section p {
+color: rgba(255,255,255,0.6);
+font-size: 1.1rem;
+margin-top: 0.5rem;
+}
+
+/* MUSIC BUTTON */
+.music-toggle {
+position: fixed;
+bottom: 1.5rem;
+right: 1.5rem;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: var(–flame);
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+z-index: 1000;
+box-shadow: 0 4px 20px rgba(255,107,53,0.5);
+transition: all 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.music-toggle:hover { transform: scale(1.15); }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+.stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+.stat-card { padding: 1.2rem 1rem; }
+.stat-emoji { font-size: 2rem; }
+.stat-number { font-size: 2rem; }
+.age-digit { width: 70px; height: 85px; font-size: 3.5rem; }
+.section { padding: 3rem 1.2rem; }
+.quote-wall { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- CONFETTI -->
+
+<div class="confetti-container" id="confetti"></div>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="age-badge">⚠️ WARNING: ANCIENT ARTIFACT DETECTED ⚠️</div>
+  <h1>HAPPY BIRTHDAY<br>RANDY!</h1>
+  <h2>aka "El Jefe" 🇲🇽</h2>
+  <div class="subtitle">The legend turns <span>49</span>. One more year til the big 5-0. Buckle up.</div>
+  <div class="age-counter">
+    <div class="age-digit">4</div>
+    <div class="age-digit">9</div>
+  </div>
+</section>
+
+<!-- TICKER -->
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    🎂 HAPPY BIRTHDAY RANDY &nbsp;&nbsp; 🔥 EL JEFE &nbsp;&nbsp; 👨‍👧‍👦 FATHER OF 5 &nbsp;&nbsp; 🏈 FANTASY FOOTBALL LOSER &nbsp;&nbsp; 🥩 HIBACHI KING &nbsp;&nbsp; 🎉 49 YEARS OLD &nbsp;&nbsp; 💀 BASICALLY 50 &nbsp;&nbsp;
+    🎂 HAPPY BIRTHDAY RANDY &nbsp;&nbsp; 🔥 EL JEFE &nbsp;&nbsp; 👨‍👧‍👦 FATHER OF 5 &nbsp;&nbsp; 🏈 FANTASY FOOTBALL LOSER &nbsp;&nbsp; 🥩 HIBACHI KING &nbsp;&nbsp; 🎉 49 YEARS OLD &nbsp;&nbsp; 💀 BASICALLY 50 &nbsp;&nbsp;
+  </div>
+</div>
+
+<!-- STATS -->
+
+<section class="section">
+  <h2 class="section-title">Randy By The Numbers</h2>
+  <div class="stats-grid">
+    <div class="stat-card" style="animation-delay: 0.1s">
+      <span class="stat-emoji">🎂</span>
+      <div class="stat-number">49</div>
+      <div class="stat-label">Years of Questionable Decisions</div>
+    </div>
+    <div class="stat-card" style="animation-delay: 0.2s">
+      <span class="stat-emoji">👶</span>
+      <div class="stat-number">5</div>
+      <div class="stat-label">Kids (He Knows About)</div>
+    </div>
+    <div class="stat-card" style="animation-delay: 0.3s">
+      <span class="stat-emoji">🏈</span>
+      <div class="stat-number">0</div>
+      <div class="stat-label">Fantasy Football Championships</div>
+    </div>
+    <div class="stat-card" style="animation-delay: 0.4s">
+      <span class="stat-emoji">🔥</span>
+      <div class="stat-number">∞</div>
+      <div class="stat-label">Hibachis Absolutely Destroyed</div>
+    </div>
+    <div class="stat-card" style="animation-delay: 0.5s">
+      <span class="stat-emoji">🇲🇽</span>
+      <div class="stat-number">12</div>
+      <div class="stat-label">Spanish Words He Actually Knows</div>
+    </div>
+    <div class="stat-card" style="animation-delay: 0.6s">
+      <span class="stat-emoji">💀</span>
+      <div class="stat-number">1</div>
+      <div class="stat-label">Year Until He's Officially Old</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROAST SECTION -->
+
+<section class="section">
+  <h2 class="section-title">🔥 The Official Roast 🔥</h2>
+  <div class="roast-list">
+    <div class="roast-card">
+      Randy's turning <strong>49</strong>... which means he's been losing at fantasy football for at least 20 of those years. At this point it's not a hobby, it's a personality flaw.
+    </div>
+    <div class="roast-card">
+      They call him <strong>"El Jefe"</strong> because he learned how to say "Dos cervezas, por favor" on a Cancun trip in 2009 and has never let anyone forget it.
+    </div>
+    <div class="roast-card">
+      Father of <strong>5 kids</strong>. That man looked at the chaos of 4 children and said <em>"you know what this house needs? MORE."</em> Respect? No. Concern? Absolutely.
+    </div>
+    <div class="roast-card">
+      Randy's idea of a gourmet meal is anything he can light on fire on a hibachi grill. The man treats soy sauce like it's a food group.
+    </div>
+    <div class="roast-card">
+      <strong>49 years old</strong> and still setting his fantasy lineup like a man who genuinely believes "this is the year." Spoiler alert: <em>it is not the year.</em>
+    </div>
+    <div class="roast-card">
+      Somewhere right now, Randy is standing in front of his grill in cargo shorts, white New Balances, and a phone holster... telling no one in particular that <strong>"it needs 2 more minutes."</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FANTASY FOOTBALL MEMORIAL -->
+
+<section class="section">
+  <div class="memorial">
+    <h3>In Loving Memory</h3>
+    <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Randy's Fantasy Football Career</h2>
+    <p>"He drafted with heart, not with logic. He held onto players long after they retired. He once started a kicker in his flex spot. He will not be missed on the waiver wire."</p>
+    <div class="dates">SEASON 1 — PRESENT &nbsp; | &nbsp; RECORD: DON'T ASK</div>
+  </div>
+</section>
+
+<!-- HIBACHI BANNER -->
+
+<div class="hibachi-banner">
+  <h2>🔥 HIBACHI KING OF THE HOUSEHOLD 🔥</h2>
+  <p>Shrimp-flipping, onion-volcano-building, spatula-wielding legend</p>
+  <div class="fire-bg">🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥</div>
+</div>
+
+<!-- SPANISH BAR -->
+
+<div class="spanish-bar"></div>
+
+<!-- EL JEFE SPANISH SECTION -->
+
+<section class="section">
+  <div class="spanish-section">
+    <h3>🇲🇽 A Message From "El Jefe" 🇲🇽</h3>
+    <p style="font-size: 2rem; margin: 1rem 0;">
+      "Feliz cumpleaños a mi... wait... como se dice..."
+    </p>
+    <p style="font-size: 0.9rem; opacity: 0.5;">
+      — Randy, trying to wish himself happy birthday in Spanish and giving up halfway through
+    </p>
+  </div>
+
+  <h2 class="section-title">Things Randy Definitely Says</h2>
+  <div class="quote-wall">
+    <div class="quote-card">
+      "I'm not 49. I'm 29 with 20 years of experience."
+      <span class="attribution">— Randy, to anyone who will listen</span>
+    </div>
+    <div class="quote-card">
+      "Hold on, don't touch that grill. It needs 2 more minutes."
+      <span class="attribution">— Randy, every cookout ever</span>
+    </div>
+    <div class="quote-card">
+      "My fantasy team is actually looking really good this year."
+      <span class="attribution">— Randy, every August since 2005</span>
+    </div>
+    <div class="quote-card">
+      "Back in my day we didn't need GPS. We just... drove."
+      <span class="attribution">— Randy, lost on the highway</span>
+    </div>
+    <div class="quote-card">
+      "Cinco de Mayo is basically my holiday."
+      <span class="attribution">— Randy "El Jefe" to his confused coworkers</span>
+    </div>
+    <div class="quote-card">
+      "Who touched the thermostat?"
+      <span class="attribution">— Randy, several times daily</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINALE -->
+
+<section class="finale">
+  <span class="big-emoji">🎉</span>
+  <h2>Happy 49th, El Jefe!</h2>
+  <p>
+    You're a legendary dad, a hibachi artist, a "fluent" Spanish speaker, and the most optimistic fantasy football player we've ever seen. Here's to 49 years of being absolutely, unapologetically Randy.
+  </p>
+  <p style="font-size: 1.5rem; color: var(--gold); margin-bottom: 2rem;">
+    Love from the whole crew ❤️🔥
+  </p>
+  <button class="birthday-btn" onclick="launchMegaConfetti()">
+    🎂 SMASH FOR BIRTHDAY CONFETTI 🎂
+  </button>
+</section>
+
+<footer>
+  <p>Made with <span>🔥</span> and love &nbsp;|&nbsp; RandyTurns49.com &nbsp;|&nbsp; © El Jefe Industries, LLC</p>
+  <p style="margin-top: 0.5rem; font-size: 0.65rem; opacity: 0.3;">No fantasy football teams were harmed in the making of this website. Several were already dead.</p>
+</footer>
+
+<!-- PARTY HORN BUTTON -->
+
+<button class="music-toggle" onclick="honk()" title="Party Horn">🎺</button>
+
+<script>
+  // CONFETTI GENERATOR
+  const confettiEmojis = ['🎉','🎊','🎂','🔥','⭐','🥳','🎈','🍰','💥','🇲🇽','🏈'];
+  const container = document.getElementById('confetti');
+
+  function createConfetti() {
+    const el = document.createElement('div');
+    el.className = 'confetti';
+    el.textContent = confettiEmojis[Math.floor(Math.random() * confettiEmojis.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.animationDuration = (Math.random() * 4 + 3) + 's';
+    el.style.fontSize = (Math.random() * 16 + 14) + 'px';
+    container.appendChild(el);
+    setTimeout(() => el.remove(), 7000);
+  }
+
+  setInterval(createConfetti, 400);
+
+  // MEGA CONFETTI BUTTON
+  function launchMegaConfetti() {
+    for (let i = 0; i < 60; i++) {
+      setTimeout(createConfetti, i * 50);
+    }
+    // Screen shake
+    document.body.style.animation = 'shake 0.5s';
+    setTimeout(() => document.body.style.animation = '', 500);
+  }
+
+  // Shake animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes shake {
+      0%, 100% { transform: translate(0); }
+      10% { transform: translate(-5px, -3px); }
+      20% { transform: translate(5px, 3px); }
+      30% { transform: translate(-3px, 5px); }
+      40% { transform: translate(3px, -5px); }
+      50% { transform: translate(-5px, 3px); }
+      60% { transform: translate(5px, -3px); }
+      70% { transform: translate(-3px, -5px); }
+      80% { transform: translate(3px, 5px); }
+      90% { transform: translate(-5px, -3px); }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // PARTY HORN
+  function honk() {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(300, ctx.currentTime);
+    osc.frequency.linearRampToValueAtTime(600, ctx.currentTime + 0.2);
+    osc.frequency.linearRampToValueAtTime(400, ctx.currentTime + 0.5);
+    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.6);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.6);
+    launchMegaConfetti();
+  }
+
+  // INTERSECTION OBSERVER FOR SCROLL ANIMATIONS
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.roast-card, .stat-card, .quote-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
