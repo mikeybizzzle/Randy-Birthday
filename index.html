@@ -18,8 +18,13 @@
 
 - { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+background-color: #0f0f1a;
+}
+
 body {
-background: var(–darker);
+background-color: #0f0f1a;
+background: #0f0f1a;
 color: #fff;
 font-family: ‘Fredoka One’, cursive;
 overflow-x: hidden;
@@ -59,13 +64,13 @@ padding: 2rem;
 position: relative;
 background: radial-gradient(ellipse at 50% 0%, rgba(255,107,53,0.15) 0%, transparent 60%),
 radial-gradient(ellipse at 80% 80%, rgba(255,20,147,0.1) 0%, transparent 50%),
-var(–darker);
+#0f0f1a;
 }
 
 .age-badge {
 font-family: ‘Press Start 2P’, monospace;
 font-size: clamp(0.6rem, 1.2vw, 0.9rem);
-color: var(–electric-blue);
+color: #00D4FF;
 letter-spacing: 4px;
 text-transform: uppercase;
 margin-bottom: 1rem;
@@ -77,7 +82,7 @@ font-family: ‘Bangers’, cursive;
 font-size: clamp(3.5rem, 12vw, 9rem);
 line-height: 0.9;
 letter-spacing: 4px;
-background: linear-gradient(135deg, var(–gold), var(–flame), var(–hot-pink));
+background: linear-gradient(135deg, #FFD700, #FF6B35, #FF1493);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
@@ -89,7 +94,7 @@ margin-bottom: 0.5rem;
 .hero h2 {
 font-family: ‘Permanent Marker’, cursive;
 font-size: clamp(1.5rem, 4vw, 3rem);
-color: var(–gold);
+color: #FFD700;
 text-shadow: 0 0 20px rgba(255,215,0,0.5);
 animation: heroIn 1s ease-out 0.3s both;
 }
@@ -102,7 +107,7 @@ animation: heroIn 1s ease-out 0.6s both;
 }
 
 .subtitle span {
-color: var(–flame);
+color: #FF6B35;
 }
 
 @keyframes heroIn {
@@ -112,15 +117,15 @@ to { opacity: 1; transform: translateY(0) scale(1); }
 
 @keyframes glitch {
 0%, 90%, 100% { opacity: 1; transform: translate(0); }
-92% { transform: translate(-2px, 1px); color: var(–hot-pink); }
-94% { transform: translate(2px, -1px); color: var(–gold); }
-96% { transform: translate(-1px, -1px); color: var(–electric-blue); }
+92% { transform: translate(-2px, 1px); color: #FF1493; }
+94% { transform: translate(2px, -1px); color: #FFD700; }
+96% { transform: translate(-1px, -1px); color: #00D4FF; }
 }
 
 /* SCROLLING TICKER */
 .ticker-wrap {
 overflow: hidden;
-background: linear-gradient(90deg, var(–flame), var(–hot-pink), var(–gold), var(–flame));
+background: linear-gradient(90deg, #FF6B35, #FF1493, #FFD700, #FF6B35);
 padding: 0.8rem 0;
 white-space: nowrap;
 }
@@ -130,7 +135,7 @@ animation: ticker 20s linear infinite;
 font-family: ‘Bangers’, cursive;
 font-size: 1.4rem;
 letter-spacing: 2px;
-color: var(–dark);
+color: #1a1a2e;
 }
 @keyframes ticker {
 0% { transform: translateX(0); }
@@ -149,8 +154,8 @@ font-family: ‘Bangers’, cursive;
 font-size: clamp(2rem, 5vw, 3.5rem);
 text-align: center;
 margin-bottom: 2rem;
-color: var(–gold);
-text-shadow: 3px 3px 0 var(–flame);
+color: #FFD700;
+text-shadow: 3px 3px 0 #FF6B35;
 }
 
 /* STATS GRID */
@@ -172,7 +177,7 @@ animation: cardIn 0.6s ease-out both;
 }
 .stat-card:hover {
 transform: translateY(-6px) rotate(-1deg);
-border-color: var(–gold);
+border-color: #FFD700;
 box-shadow: 0 12px 40px rgba(255,215,0,0.15);
 }
 
@@ -184,7 +189,7 @@ margin-bottom: 0.5rem;
 .stat-number {
 font-family: ‘Bangers’, cursive;
 font-size: 2.5rem;
-color: var(–flame);
+color: #FF6B35;
 line-height: 1;
 }
 .stat-label {
@@ -207,7 +212,7 @@ gap: 1.5rem;
 
 .roast-card {
 background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(255,20,147,0.05));
-border-left: 4px solid var(–flame);
+border-left: 4px solid #FF6B35;
 border-radius: 0 16px 16px 0;
 padding: 1.5rem 2rem;
 font-size: clamp(1rem, 2vw, 1.2rem);
@@ -229,10 +234,10 @@ opacity: 0.15;
 .roast-card:hover {
 transform: translateX(8px);
 background: linear-gradient(135deg, rgba(255,107,53,0.15), rgba(255,20,147,0.1));
-border-left-color: var(–hot-pink);
+border-left-color: #FF1493;
 }
 .roast-card strong {
-color: var(–gold);
+color: #FFD700;
 }
 
 /* FANTASY FOOTBALL MEMORIAL */
@@ -273,7 +278,7 @@ letter-spacing: 2px;
 
 /* HIBACHI SECTION */
 .hibachi-banner {
-background: linear-gradient(135deg, var(–flame), #FF8C42, var(–gold));
+background: linear-gradient(135deg, #FF6B35, #FF8C42, #FFD700);
 padding: 3rem 2rem;
 text-align: center;
 position: relative;
@@ -282,7 +287,7 @@ overflow: hidden;
 .hibachi-banner h2 {
 font-family: ‘Bangers’, cursive;
 font-size: clamp(2rem, 6vw, 4rem);
-color: var(–dark);
+color: #1a1a2e;
 position: relative;
 z-index: 1;
 }
@@ -322,7 +327,7 @@ line-height: 1.5;
 transition: all 0.3s;
 }
 .quote-card:hover {
-border-color: var(–gold);
+border-color: #FFD700;
 color: rgba(255,255,255,0.9);
 }
 .quote-card .attribution {
@@ -330,7 +335,7 @@ display: block;
 margin-top: 0.8rem;
 font-style: normal;
 font-size: 0.8rem;
-color: var(–flame);
+color: #FF6B35;
 font-family: ‘Press Start 2P’, monospace;
 font-size: 0.55rem;
 }
@@ -344,7 +349,7 @@ background: radial-gradient(ellipse at 50% 50%, rgba(255,215,0,0.08), transparen
 .finale h2 {
 font-family: ‘Bangers’, cursive;
 font-size: clamp(2.5rem, 8vw, 6rem);
-background: linear-gradient(135deg, var(–gold), var(–flame));
+background: linear-gradient(135deg, #FFD700, #FF6B35);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
@@ -372,7 +377,7 @@ animation: bounce 2s ease-in-out infinite;
 .birthday-btn {
 display: inline-block;
 padding: 1rem 3rem;
-background: linear-gradient(135deg, var(–flame), var(–hot-pink));
+background: linear-gradient(135deg, #FF6B35, #FF1493);
 color: #fff;
 font-family: ‘Bangers’, cursive;
 font-size: 1.5rem;
@@ -396,7 +401,7 @@ padding: 2rem;
 color: rgba(255,255,255,0.2);
 font-size: 0.8rem;
 }
-footer span { color: var(–flame); }
+footer span { color: #FF6B35; }
 
 /* AGE COUNTER */
 .age-counter {
@@ -408,7 +413,7 @@ flex-wrap: wrap;
 }
 .age-digit {
 background: linear-gradient(180deg, rgba(255,107,53,0.2), rgba(255,107,53,0.05));
-border: 2px solid var(–flame);
+border: 2px solid #FF6B35;
 border-radius: 12px;
 width: 100px;
 height: 120px;
@@ -417,7 +422,7 @@ align-items: center;
 justify-content: center;
 font-family: ‘Bangers’, cursive;
 font-size: 5rem;
-color: var(–gold);
+color: #FFD700;
 text-shadow: 0 0 30px rgba(255,215,0,0.5);
 animation: digitPop 0.5s ease-out both;
 }
@@ -460,7 +465,7 @@ right: 1.5rem;
 width: 50px;
 height: 50px;
 border-radius: 50%;
-background: var(–flame);
+background: #FF6B35;
 border: none;
 font-size: 1.5rem;
 cursor: pointer;
@@ -651,7 +656,7 @@ justify-content: center;
   <p>
     You're a legendary dad, a hibachi artist, a "fluent" Spanish speaker, and the most optimistic fantasy football player we've ever seen. Here's to 49 years of being absolutely, unapologetically Randy.
   </p>
-  <p style="font-size: 1.5rem; color: var(--gold); margin-bottom: 2rem;">
+  <p style="font-size: 1.5rem; color: #FFD700; margin-bottom: 2rem;">
     Love from the whole crew ❤️🔥
   </p>
   <button class="birthday-btn" onclick="launchMegaConfetti()">
